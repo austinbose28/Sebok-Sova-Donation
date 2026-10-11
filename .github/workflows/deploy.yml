@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p public
           cp -r gazipur-donation-live/. public/
-          printf 'window.SUPABASE_URL = "%s";\nwindow.SUPABASE_ANON_KEY = "%s";\n' \
+          printf 'window.APP_CONFIG = { SUPABASE_URL: "%s", SUPABASE_ANON_KEY: "%s" };\n' \
             "$SUPABASE_URL" "$SUPABASE_ANON_KEY" > public/config.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
